@@ -87,6 +87,10 @@ Rails:
 
 #################### Style ###############################
 
+# We don't run ruby <= 2.3, so this comment isn't necessary.
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 # File.open {} vs File.open
 Style/AutoResourceCleanup:
   Enabled: true
