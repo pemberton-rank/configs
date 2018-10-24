@@ -1,0 +1,153 @@
+# Common configuration.
+
+AllCops:
+  RubyInterpreters:
+    - ruby
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.1
+
+#################### Bundler ###############################
+
+# I think it's better to order them logically rather than alphabetically.
+Bundler/OrderedGems:
+  Enabled: false
+
+#################### Gemspec ###############################
+
+# I think it's better to order them logically rather than alphabetically.
+Gemspec/OrderedDependencies:
+  Enabled: false
+
+#################### Layout ###########################
+
+# By default, only ->() is allowed.
+# We change this to -> ().
+Layout/SpaceInLambdaLiteral:
+  Enabled: true
+  EnforcedStyle: require_space
+
+
+#################### Lint ##################################
+
+
+#################### Metrics ###############################
+
+# This one may be annoying.
+# Metrics/ClassLength:
+#   Description: 'Avoid classes longer than 100 lines of code.'
+#   Enabled: true
+#   VersionAdded: 0.25
+#   CountComments: false  # count full line comments?
+#   Max: 100
+
+# May need adjusting.
+# Metrics/CyclomaticComplexity:
+#   Description: >-
+#                  A complexity metric that is strongly correlated to the number
+#                  of test cases needed to validate a method.
+#   Enabled: true
+#   VersionAdded: 0.25
+#   Max: 6
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 120
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  # The IgnoreCopDirectives option causes the LineLength rule to ignore cop
+  # directives like '# rubocop: enable ...' when calculating a line's length.
+  IgnoreCopDirectives: false
+  # The IgnoredPatterns option is a list of !ruby/regexp and/or string
+  # elements. Strings will be converted to Regexp objects. A line that matches
+  # any regular expression listed in this option will be ignored by LineLength.
+  IgnoredPatterns: []
+
+# This may also get annoying.
+# Metrics/ModuleLength:
+#   Description: 'Avoid modules longer than 100 lines of code.'
+#   Enabled: true
+#   VersionAdded: 0.31
+#   CountComments: false  # count full line comments?
+#   Max: 100
+
+#################### Naming ##############################
+
+
+#################### Performance ###########################
+
+#################### Rails #################################
+
+Rails:
+  Enabled: true
+
+#################### Security ##############################
+
+#################### Style ###############################
+
+# File.open {} vs File.open
+Style/AutoResourceCleanup:
+  Enabled: true
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    detect: 'detect'
+    find_all: 'select'
+
+Style/CommandLiteral:
+  Enabled: true
+  EnforcedStyle: percent_x
+
+# Don't require class/module comments
+Style/Documentation:
+  Enabled: false
+
+# Double negation is handy
+Style/DoubleNegation:
+  Enabled: false
+
+# Always use -> instead of lambda
+Style/Lambda:
+  Enabled: true
+  EnforcedStyle: literal
+
+# Not sure I agree with this. I find `unless` confusing.
+# Style/NegatedIf:
+#   Description: >-
+#                  Favor unless over if for negative conditions
+#                  (or control flow or).
+#   StyleGuide: '#unless-for-negatives'
+#   Enabled: true
+#   VersionAdded: 0.20
+#   VersionChanged: 0.48
+#   EnforcedStyle: both
+#   SupportedStyles:
+#     # both: prefix and postfix negated `if` should both use `unless`
+#     # prefix: only use `unless` for negated `if` statements positioned before the body of the statement
+#     # postfix: only use `unless` for negated `if` statements positioned after the body of the statement
+#     - both
+#     - prefix
+#     - postfix
+
+
+# `return` instead of `return nil` (they're equivalent)
+Style/ReturnNil:
+  Enabled: true
+  EnforcedStyle: return
+
+# Lambdas don't *have* to have paentheses.
+Style/StabbyLambdaParentheses:
+  Enabled: false
+
+# Just use double-quotes everywhere unless we can't for some reason.
+# Performance difference is non-existent, which is the usual argument.
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+  ConsistentQuotesInMultiline: true
