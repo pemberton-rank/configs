@@ -29,8 +29,16 @@ Layout/SpaceInLambdaLiteral:
 
 #################### Lint ##################################
 
+# Allow `expect { }` in rspec
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
 
 #################### Metrics ###############################
+
+Metrics/BlockLength:
+  Exclude:
+    - "db/schema.rb"
 
 # This one may be annoying.
 # Metrics/ClassLength:
