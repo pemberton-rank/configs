@@ -165,3 +165,7 @@ Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
   ConsistentQuotesInMultiline: true
+
+# I disagree with this one
+RSpec/MessageSpies:
+  Enabled: false
