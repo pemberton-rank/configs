@@ -169,3 +169,7 @@ Style/StringLiterals:
 # I disagree with this one
 RSpec/MessageSpies:
   Enabled: false
+
+# This is reasonable with shoulda matchers
+RSpec/ImplicitSubject:
+  Enabled: false
