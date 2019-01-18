@@ -93,6 +93,13 @@ Metrics/LineLength:
 Rails:
   Enabled: true
 
+Rails/UnknownEnv:
+  Environments:
+    - test
+    - development
+    - staging
+    - production
+
 #################### Security ##############################
 
 #################### Style ###############################
