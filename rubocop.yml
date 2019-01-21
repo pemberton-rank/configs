@@ -180,3 +180,11 @@ RSpec/MessageSpies:
 # This is reasonable with shoulda matchers
 RSpec/ImplicitSubject:
   Enabled: false
+
+# Causes issues with lots of contexts
+RSpec/NestedGroups:
+  Enabled: false
+
+# Examples can grow when splitting lines
+RSpec/ExampleLength:
+  Enabled: false
