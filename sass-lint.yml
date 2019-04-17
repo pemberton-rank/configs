@@ -4,3 +4,7 @@ rules:
     - 1
     -
       convention: camelcase
+  class-name-format:
+    - 1
+    -
+      convention: hyphenatedbem
