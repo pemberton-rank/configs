@@ -2,3 +2,5 @@
 detectors:
   NilCheck:
     enabled: false
+  IrresponsibleModule:
+    enabled: false
